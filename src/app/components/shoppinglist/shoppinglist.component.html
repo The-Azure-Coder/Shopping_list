@@ -1,0 +1,33 @@
+<div class="itemlist">
+  <h2>Item list</h2>
+</div>
+
+<div class="board">
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.item_name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td>
+          <img routerLink="/shopping_list/{{item._id}}" src="/assets/images/pencil (2).png" alt="">
+          <img (click)="deleteItem(item._id)" src="/assets/images/trash.png" alt="">
+          <!-- <a class="edit-btn" routerLink="/shopping_list/{{item._id}}">Edit</a> -->
+          <!-- <button (click)="deleteItem(item._id)" class="delete-btn">Delete</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button [routerLink]="['/categories']" class="cat-btn">View Categories</button>
+</div>

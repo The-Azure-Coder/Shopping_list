@@ -1,0 +1,8 @@
+<div class="shopping-form">
+  <form (submit)="onSubmit()" [formGroup]="addCategory" action="">
+    <h1>Add New Category</h1>
+    <label for="">Category</label>
+    <input type="text" name="category_nm" formControlName="category_nm">
+    <button type="submit"> Add Category</button>
+  </form>
+</div>
